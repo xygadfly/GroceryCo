@@ -1,0 +1,4 @@
+﻿Apple	0.5
+Banana	1
+Orange	1.99
+Avocado	0.35

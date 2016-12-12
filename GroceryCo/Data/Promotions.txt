@@ -1,0 +1,4 @@
+﻿Apple	1	.25
+Orange	2	.99
+Banana	1	free	1
+Avocado	1	%	1	50
