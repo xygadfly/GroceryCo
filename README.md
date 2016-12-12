@@ -1,10 +1,10 @@
-## Running the Application
+﻿## Running the Application
 
 Open the solution in visual studio then run. 
 
 It will automatically copy the data files and sample file to the output directory. 
 
-The receipt will also be printed in the outdirectory with the format "Receipt-{GUID}.txt"
+The receipt will also be printed in the output directory with the format "Receipt-{GUID}.txt"
 
 ## Prices File
 
