@@ -71,6 +71,12 @@ This will just contain a list of the products. Each product should be in one lin
 
 ## Notes
 
+Both the percentage and free promotions are dynamic on how many are going to be free or will have a percentage discount. 
 
+for example you can say 
+
+Buy 2 'Apple' get 4 for free
+
+Buy 4 'Orange' get 2 for 50% off
 
 
