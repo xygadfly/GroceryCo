@@ -31,7 +31,7 @@ namespace GroceryCo.Discounts
         /// <returns>Promotional Price Amount</returns>
         public decimal Calculate(int quantity)
         {
-            return Convert.ToInt32(quantity/promotionQuantity)*promotionPrice +
+            return Math.Floor(Convert.ToDecimal(quantity/promotionQuantity))*promotionPrice +
                    quantity%promotionQuantity*productPrice;
         }
     }
