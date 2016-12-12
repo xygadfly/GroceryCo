@@ -80,3 +80,4 @@ Buy 2 'Apple' get 4 for free
 Buy 4 'Orange' get 2 for 50% off
 
 
+I also added the tax though it's not specified in the requirement. Both the label of the tax and percentage are located in the app.config file. I just considered our sales tax of GST. I was thinking of having it dynamic to also be configured in the a text file with multiple tax like GST and PST but got not time to implement. 

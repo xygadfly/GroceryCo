@@ -32,13 +32,50 @@ namespace GroceryCo.Printer
             var filePath = string.Format("{0}\\Receipt-{1}.txt", Environment.CurrentDirectory, Guid.NewGuid());
 
             //add the header
-            AddHeader();
+            PrintHeader();
 
+            //print the items
+            PrintBody(checkout);
+
+            //print the total
+            PrintTotal(checkout);
+
+            //add the footer
+            PrintFooter();
+
+            //write the receipt to the file
+            var sw = new StreamWriter(filePath);
+            sw.Write(sb.ToString());
+            sw.Close();
+        }
+
+
+        /// <summary>
+        ///     Print the header
+        /// </summary>
+        private void PrintHeader()
+        {
+            sb.AppendLine("*************************************************");
             //add the date of the receipt
             sb.AppendFormat("Printed Date: {0}", DateTime.Now);
             sb.AppendLine();
             sb.AppendLine("*************************************************");
+        }
 
+        /// <summary>
+        ///     print the footer
+        /// </summary>
+        private void PrintFooter()
+        {
+            sb.AppendLine("*************************************************");
+        }
+
+        /// <summary>
+        /// Print the items
+        /// </summary>
+        /// <param name="checkout"></param>
+        private void PrintBody(Checkout checkout)
+        {
             //addd the header of items
             sb.AppendFormat("{0} - {1} - {2} - {3} - {4} - {5}",
                 "ITEM",
@@ -60,40 +97,23 @@ namespace GroceryCo.Printer
                     item.Subtotal.ToString("C"),
                     item.PromotionalPrice.HasValue ? item.PromotionLabel : "");
                 sb.AppendLine();
-            }
+            }            
+        }
 
+
+        /// <summary>
+        /// Print the sub-total, tax, total
+        /// </summary>
+        /// <param name="checkout"></param>
+        private void PrintTotal(Checkout checkout)
+        {
             sb.AppendLine("-------------------------------------------------");
             sb.AppendFormat("Subtotal: {0}", checkout.SubTotal.ToString("C"));
             sb.AppendLine();
             sb.AppendFormat("{0}: {1}", checkout.TaxLabel, checkout.TaxTotal.ToString("C"));
             sb.AppendLine();
             sb.AppendFormat("Total: {0}", checkout.Total.ToString("C"));
-            sb.AppendLine();
-
-            //add the footer
-            AddFooter();
-
-            //write the receipt to the file
-            var sw = new StreamWriter(filePath);
-            sw.Write(sb.ToString());
-            sw.Close();
-        }
-
-
-        /// <summary>
-        ///     Print the header
-        /// </summary>
-        private void AddHeader()
-        {
-            sb.AppendLine("*************************************************");
-        }
-
-        /// <summary>
-        ///     print the footer
-        /// </summary>
-        private void AddFooter()
-        {
-            sb.AppendLine("*************************************************");
+            sb.AppendLine();            
         }
     }
 }

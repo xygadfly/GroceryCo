@@ -10,10 +10,17 @@
         private readonly decimal promotionPercentage;
         private readonly int promotionQuantity;
 
-        public PercentageDiscount(int quantity, int discountedQuantity, decimal productPrice,
+        /// <summary>
+        ///     Create Percentage Discount Promotion
+        /// </summary>
+        /// <param name="promotionQuantity">quantity that will qualify for the discount</param>
+        /// <param name="discountedQuantity">quantity that will have the discount</param>
+        /// <param name="productPrice">product price</param>
+        /// <param name="promotionPercentage">percentage discount</param>
+        public PercentageDiscount(int promotionQuantity, int discountedQuantity, decimal productPrice,
             decimal promotionPercentage)
         {
-            promotionQuantity = quantity;
+            this.promotionQuantity = promotionQuantity;
             this.productPrice = productPrice;
             this.promotionPercentage = promotionPercentage;
             this.discountedQuantity = discountedQuantity;

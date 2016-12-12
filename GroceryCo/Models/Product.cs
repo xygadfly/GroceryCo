@@ -5,6 +5,9 @@
     /// </summary>
     public class Product
     {
+        public string Id { get; set; }
+        public decimal Price { get; set; }
+
         /// <summary>
         /// Create a new instance of product
         /// </summary>
@@ -15,8 +18,5 @@
             Id = id;
             Price = price;
         }
-
-        public string Id { get; set; }
-        public decimal Price { get; set; }
     }
 }

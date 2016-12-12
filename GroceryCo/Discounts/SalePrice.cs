@@ -11,9 +11,15 @@ namespace GroceryCo.Discounts
         private readonly decimal promotionPrice;
         private readonly int promotionQuantity;
 
-        public SalePrice(int quantity, decimal promotionPrice, decimal productPrice)
+        /// <summary>
+        ///     Create Sale Price Discount
+        /// </summary>
+        /// <param name="promotionQuantity">quantity that will qualify for the discount</param>
+        /// <param name="promotionPrice">the discounted price of the product</param>
+        /// <param name="productPrice">original product price</param>
+        public SalePrice(int promotionQuantity, decimal promotionPrice, decimal productPrice)
         {
-            promotionQuantity = quantity;
+            this.promotionQuantity = promotionQuantity;
             this.promotionPrice = promotionPrice;
             this.productPrice = productPrice;
         }

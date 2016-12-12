@@ -14,6 +14,11 @@ namespace GroceryCo.Models
         private readonly Products products;
         private readonly Promotions promotions;
 
+        public decimal SubTotal { get; set; }
+        public string TaxLabel { get; set; }
+        public decimal TaxTotal { get; set; }
+        public decimal Total { get; set; }
+
         /// <summary>
         ///     Initialize the checkout process
         /// </summary>
@@ -30,11 +35,6 @@ namespace GroceryCo.Models
         {
             get { return cartItems; }
         }
-
-        public decimal SubTotal { get; set; }
-        public string TaxLabel { get; set; }
-        public decimal TaxTotal { get; set; }
-        public decimal Total { get; set; }
 
         /// <summary>
         ///     Add a product to the cart

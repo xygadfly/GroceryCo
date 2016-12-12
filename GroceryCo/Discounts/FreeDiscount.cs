@@ -6,15 +6,20 @@
     public class FreeDiscount : IDiscount
     {
         private readonly int freeQuantity;
-        private string id;
         private readonly decimal price;
         private readonly int promotionQuantity;
 
-        public FreeDiscount(int quantity, int freeQty, decimal productPrice)
+        /// <summary>
+        ///     Create Free Discount Promotion
+        /// </summary>
+        /// <param name="promotionQuantity">quantity that will qualify for the discount</param>
+        /// <param name="freeQuantity">quantity that will have the discount</param>
+        /// <param name="price">product price</param>
+        public FreeDiscount(int promotionQuantity, int freeQuantity, decimal price)
         {
-            promotionQuantity = quantity;
-            price = productPrice;
-            freeQuantity = freeQty;
+            this.promotionQuantity = promotionQuantity;
+            this.price = price;
+            this.freeQuantity = freeQuantity;
         }
 
         /// <summary>

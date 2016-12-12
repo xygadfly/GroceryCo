@@ -7,6 +7,10 @@
     {
         private readonly Promotion promotion;
 
+        public int Quantity { get; set; }
+        public decimal? PromotionalPrice { get; set; }
+        public string PromotionLabel { get; set; }
+
         /// <summary>
         /// Create a new cart item
         /// </summary>
@@ -20,10 +24,6 @@
             //set the quantity to 1 when newly created
             Quantity = 1;
         }
-
-        public int Quantity { get; set; }
-        public decimal? PromotionalPrice { get; set; }
-        public string PromotionLabel { get; set; }
 
         /// <summary>
         /// Calculate the Sub-total
